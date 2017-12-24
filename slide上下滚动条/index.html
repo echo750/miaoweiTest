@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		li{
+			list-style:none;
+		}
+		img{
+			border:0;
+		}
+		.page{
+			width: 200px;
+			height: 660px;
+			margin:0 auto;
+			text-align: center; 
+			border:2px solid #cdcdcd;
+			position:relative;
+			top:40px;
+		}
+		#up{
+			width: 27px;
+			height: 27px;
+			position: absolute;
+			left: 50%;
+			cursor:pointer;
+			transform: translate(-50%);
+			background:url(images/up.gif) no-repeat;
+			top: 4px; 
+			filter: alpha(opacity: 60); 
+			opacity: 0.6; 
+		}
+		#down{
+			width: 27px;
+			height: 27px;
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%);
+			top:630px;
+			cursor:pointer;
+			background:url(images/down.gif) no-repeat;
+		}
+		.wrap{
+			width:200px; 
+			height: 590px; 
+			position: absolute; 
+			top: 35px; 
+			left: 0; 
+			overflow: hidden; 
+		}
+		ul{
+			 width: 200px; 
+			 position: absolute; 
+			 top: 0; 
+			 left: 0;
+		}
+		li{
+			width: 200px;
+			height: 200px;
+			float: left;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var up=document.getElementById("up");
+			var down=document.getElementById("down");
+			var oUl=document.getElementsByTagName("ul")[0];
+			var oList=oUl.getElementsByTagName("li");
+			oUl.innerHTML+=oUl.innerHTML;
+			var timer=null;
+			var ispeed=5;
+			var timer=null;
+			up.onmousedown=function(){
+				timer=setInterval(doMove,30);
+				ispeed=5;
+			};
+			up.onmouseup=function(){
+				clearInterval(timer);
+			};
+			down.onmousedown=function(){
+				timer=setInterval(doMove,30);
+				ispeed=-5
+			};
+			down.onmouseup=function(){
+				clearInterval(timer);
+			};
+			function doMove(){
+				oUl.style.top=oUl.offsetTop-ispeed+'px';
+				if(oUl.offsetTop<-oUl.offsetHeight/2){
+					oUl.style.top="0px";
+				}else if(oUl.offsetTop>0){
+					oUl.style.top=-oUl.offsetTop/2;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div id="up"></div>
+		<div class="wrap">
+		<ul>
+			<li><a href="#"><img src="images/1.jpg" style="width: 200px;height:200px;"></a></li>
+			<li><a href="#"><img src="images/2.jpg" style="width: 200px;height:200px;"></a></li>
+			<li><a href="#"><img src="images/3.jpg" style="width: 200px;height:200px;"></a></li>
+			<li><a href="#"><img src="images/4.jpg" style="width: 200px;height:200px;"></a></li>
+		</ul>
+		</div>
+		<div id="down"></div>
+	</div>
+</body>
+</html>

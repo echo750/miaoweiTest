@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.page{
+			width: 1000px;
+			height: 800px;
+			margin:0 auto;
+			background:green;
+			position:relative;
+		}
+		.right{
+			width: 300px;
+			height: 700px;
+			background: url(image/echo.png) no-repeat;
+			position: absolute;
+			right: 40px;
+			top:40px;
+		}
+		#head{
+			display: block;
+			width:100px;
+			height:100px;
+			background:url(image/link.png) no-repeat;
+			position: absolute;
+			top: 33px;
+			left: 10px;
+		}
+		#left{
+			width: 300px;
+			height: 200px;
+			position: relative;
+			right: 310px;
+			margin-right:8px;
+			display: none;
+			background:url(image/echo-left.png) no-repeat;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var head=document.getElementById("head");
+			var left=document.getElementById("left");
+			var timer=null;
+			function show(){
+				clearTimeout(timer);
+				left.style.display="block";
+			}
+			function hidden(){
+				timer=setTimeout(function(){left.style.display="none";},30);
+			}
+			head.onmouseover=left.onmouseover=show;
+			head.onmouseout=left.onmouseout=hidden;
+		}
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div class="right">
+			<a href="#" id="head"></a>
+			<div id="left"></div>
+		</div>
+	</div>
+</body>
+</html>
