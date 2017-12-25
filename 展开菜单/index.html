@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		img{
+			border:0;
+		}
+		body{
+			background:#f6f6f6;
+			font-family: arial;
+			font-size: 12px;
+		}
+		li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		#nav{
+			margin:20px auto;
+			width: 145px;
+			background: #8e9eb1;
+			border: 1px solid #8e9eb1;
+		}
+		#nav li{
+			width: 145px;
+			height: 24px;
+			line-height: 24px;
+			border-top: 1px solid #a2b4c9;
+			border-bottom: 1px solid #708195;
+			position:relative;
+		}
+		#nav .menu{
+			width: 145px;
+			display: none;
+		}
+		#nav .img{
+			position: absolute;
+			top:5px;
+			left:10px;
+		}
+		#nav .navLink{
+			width: 115px;
+			height: 24px;
+			padding-left: 30px;
+			display: block;
+			color:#fff;
+			text-decoration: none;
+		}
+		#nav .menu li{
+			width: 145px;
+			height: 22px;
+			border-bottom:1px solid #708195;
+			background:url(menu.gif);
+			position: relative;
+		}
+		#nav .menuLink{
+			padding-left: 50px;
+			color:#6b7f97;
+			text-decoration: none;
+		}
+		#nav .img2{
+			position: absolute;
+			top:5px;
+			left: 30px;
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var oUl=document.getElementsByTagName('ul')[0];
+			var aList=document.getElementsByClassName('list');
+			var aUl=oUl.getElementsByTagName('ul');
+			var i=0;
+			for(i=0;i<aList.length;i++){
+				aList[i].index=i;
+				aList[i].onclick=function(){
+					for(i=0;i<aList.length;i++){
+						aUl[i].style.display='none';
+					}
+						aUl[this.index].style.display='block';
+				};
+			}
+		}
+	</script>
+</head>
+<body>
+	<ul id="nav">
+		<li class="list"><a href="#" class="navLink"><img src="nav.gif" class="img">
+		妙味首页</a></li>
+		<ul class="menu">
+			<li><a href="#" class="menuLink"><img class="img2"src="nav2.gif">网站介绍</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">精品套餐</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">秒为特色</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">免费试听</a></li>
+		</ul>
+		<li class="list"><a href="#" class="navLink"><img src="nav.gif" class="img">
+		妙味首页</a></li>
+		<ul class="menu">
+			<li><a href="#" class="menuLink"><img class="img2"src="nav2.gif">网站介绍</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">精品套餐</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">秒为特色</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">免费试听</a></li>
+		</ul>
+		<li class="list"><a href="#" class="navLink"><img src="nav.gif" class="img">
+		妙味首页</a></li>
+		<ul class="menu">
+			<li><a href="#" class="menuLink"><img class="img2"src="nav2.gif">网站介绍</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">精品套餐</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">秒为特色</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">免费试听</a></li>
+		</ul>
+		<li class="list"><a href="#" class="navLink"><img src="nav.gif" class="img">
+		妙味首页</a></li>
+		<ul class="menu">
+			<li><a href="#" class="menuLink"><img class="img2"src="nav2.gif">网站介绍</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">精品套餐</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">秒为特色</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">免费试听</a></li>
+		</ul>
+		<li class="list"><a href="#" class="navLink"><img src="nav.gif" class="img">
+		妙味首页</a></li>
+		<ul class="menu">
+			<li><a href="#" class="menuLink"><img class="img2"src="nav2.gif">网站介绍</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">精品套餐</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">秒为特色</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">免费试听</a></li>
+		</ul>
+		<li class="list"><a href="#" class="navLink"><img src="nav.gif" class="img">
+		妙味首页</a></li>
+		<ul class="menu">
+			<li><a href="#" class="menuLink"><img class="img2"src="nav2.gif">网站介绍</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">精品套餐</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">秒为特色</a></li>
+			<li><a href="#" class="menuLink"><img class="img2" src="nav2.gif">免费试听</a></li>
+		</ul>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		img{
+			border:0;
+		}
+		li{
+			list-style: none;
+		}
+		body{
+			background:#f0fcff;
+			font-family: arial;
+			font-size: 12px;
+		}
+		a{
+			text-decoration: none;
+		}
+		.page{
+			margin:50px auto;
+			width: 400px;
+		}
+		.nav{
+			position: relative;
+		}
+		.nav ul{
+			width:484px;
+			height:44px;
+			background:url(images/nav_bg.gif) repeat-x 0 -44px;
+			border-left:1px solid #d4d4d4;
+			border-right:1px solid #d4d4d4;
+			/*float:left;*/
+		}
+		.nav li{
+			float: left;
+			height: 44px;
+			line-height: 44px;
+			border-right:1px solid #d4d4d4;
+		}
+		.nav li a{
+			float: left;
+			height: 44px;
+			line-height: 44px;
+			color:#999;
+			padding:0 20px;
+		}
+		.nav .active {
+			background: url(images/nav_bg.gif) repeat-x 0 -88px;
+		}
+		.nav .active a { 
+			background: url(images/ico.gif) no-repeat center bottom; color: #333; 
+			font-weight: bold; }
+		.nav .active a:hover { 
+			background: url(images/ico.gif) no-repeat center bottom; 
+		}
+		.nav .more{
+			font-family:'宋体';
+			position: absolute;
+			color:#999;
+			text-decoration: none;
+			top:15px;
+			right: -84px;
+		}
+		.content{
+			position: relative;
+			width: 484px;
+			overflow: hidden;
+			margin-left: 1px;
+			background-color: white;
+		}
+		.box{
+			display: none;
+			width: 444px;
+			padding:20px;
+			overflow: hidden;
+		}
+		.pic{
+			padding: 7px 0 0 7px;
+			float: left;
+			width: 189px;
+			height: 115px;
+			background:url(images/pic_bg.jpg) no-repeat;
+		}
+		.pic_list{
+			float: right;
+			width: 232px;
+			padding-left:16px;
+			display: inline-block;
+		}
+		.pic_list li {
+			 width: 232px; 
+			 float: left; 
+			 font-family: arial; 
+			 line-height: 18px; 
+			 margin-bottom: 4px; 
+			}
+		.pic_list h2 { 
+			width: 232px; 
+			font-size: 12px; 
+			height: 18px; 
+			background: url(images/line.gif) repeat-x 0 8px;
+			 }
+		.pic_list h2 a { 
+			height: 18px; 
+			text-decoration: none; 
+			color: #333; 
+			font-weight: bold; 
+			background: #fff; 
+			padding-right: 5px; 
+			float: left; 
+		}
+		.pic_list h2 a:hover { 
+			text-decoration: underline; 
+			color:#D31A05; 
+		}
+		.pic_list h2 span { 
+			height: 18px; 
+			color: #999; 
+			float: right; 
+			background: #fff; 
+			padding-left: 5px; 
+		}
+		.pic_list p { 
+			color: #999; 
+			word-spacing: 10px; 
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var oNav=document.getElementById('nav');
+		var oUl=oNav.getElementsByTagName("ul")[0];
+		var aList=oUl.getElementsByTagName("li");
+		var aBox=document.getElementsByClassName("box");
+		for(i=0;i<aList.length;i++){
+			aList[i].index=i;
+			aList[i].onclick=function(){
+				for(var i=0;i<aList.length;i++){
+					aList[i].className="";
+					aBox[i].style.display='none';
+				}
+				this.className='active';
+				aBox[this.index].style.display='block';
+			}
+		}
+	}
+	</script>
+</head>
+<body>
+	<div class="page">
+		<div class="nav" id="nav">
+			<ul>
+				<li class="active"><a href="#">妙味课堂</a></li>
+				<li><a href="#">妙味茶馆</a></li>
+				<li><a href="#">精通JavaScript开发课程</a></li>
+			</ul>
+			<a href="#" class="more">>>更多</a>
+		</div>
+		<div class="content">
+			<div class="box" style="display: block">
+				<div class="pic">
+					<a href="#">
+						<img src="images/1.jpg">
+					</a>
+				</div>
+				<ul class="pic_list">
+					<li>
+						<h2><a href="#">妙味课堂周璐聚会活动现场</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：223  2012.3.22</p>
+					</li>
+					<li>
+						<h2><a href="#">课堂常见问题集合</a>
+						<span>Leo</span>
+						</h2>
+						<p>点击：122  2016.2.3</p>
+					</li>
+					<li>
+						<h2><a href="#">妙味课堂JS课程节课标准</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：233  2017.3.22</p>
+					</li>
+				</ul>
+			</div>
+			<div class="box">
+				<div class="pic">
+					<a href="#">
+						<img src="images/2.jpg">
+					</a>
+				</div>
+				<ul class="pic_list">
+					<li>
+						<h2><a href="#">妙味课堂JS视频教程</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：223  2012.3.22</p>
+					</li>
+					<li>
+						<h2><a href="#">妙味生活秀</a>
+						<span>Leo</span>
+						</h2>
+						<p>点击：122  2016.2.3</p>
+					</li>
+					<li>
+						<h2><a href="#">妙味课堂=特效</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：233  2017.3.22</p>
+					</li>
+				</ul>
+			</div>
+			<div class="box">
+				<div class="pic">
+					<a href="#">
+						<img src="images/3.jpg">
+					</a>
+				</div>
+				<ul class="pic_list">
+					<li>
+						<h2><a href="#">妙味课堂-课程列表</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：223  2012.3.22</p>
+					</li>
+					<li>
+						<h2><a href="#">精通JavaScript开发课程</a>
+						<span>Leo</span>
+						</h2>
+						<p>点击：122  2016.2.3</p>
+					</li>
+					<li>
+						<h2><a href="#">高级页面架构师精品课程</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：233  2017.3.22</p>
+					</li>
+					<li>
+						<h2><a href="#">零基础网页制作精品课程</a>
+						<span>Blue</span>
+						</h2>
+						<p>点击：233  2017.3.22</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
